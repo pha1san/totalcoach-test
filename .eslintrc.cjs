@@ -24,22 +24,39 @@ module.exports = {
       },
     ],
     "import/order": [
-      "error",
+      1,
       {
-        groups: ["builtin", "external", "internal"],
+        groups: ["builtin", "external", "internal", "sibling", "parent", "index"],
         pathGroups: [
+          ...getDirectoriesToSort().map((singleDir) => ({
+            pattern: `${singleDir}/**`,
+            group: "internal",
+          })),
+          {
+            pattern: "env",
+            group: "internal",
+          },
+          {
+            pattern: "theme",
+            group: "internal",
+          },
+          {
+            pattern: "public/**",
+            group: "internal",
+            position: "after",
+          },
           {
             pattern: "react",
-            group: "external",
+            group: "builtin",
             position: "before",
           },
         ],
-        pathGroupsExcludedImportTypes: ["react"],
-        "newlines-between": "always",
+        pathGroupsExcludedImportTypes: ["react", "internal"],
         alphabetize: {
           order: "asc",
           caseInsensitive: true,
         },
+        "newlines-between": "always",
       },
     ],
   },
@@ -55,3 +72,14 @@ module.exports = {
     tsconfigRootDir: __dirname,
   },
 };
+
+function getDirectoriesToSort() {
+  const ignoredSortingDirectories = [".git", ".next", ".vscode", "node_modules"];
+  return getDirectories(process.cwd()).filter((f) => !ignoredSortingDirectories.includes(f));
+}
+
+function getDirectories(path) {
+  return fs.readdirSync(path).filter(function (file) {
+    return fs.statSync(path + "/" + file).isDirectory();
+  });
+}
