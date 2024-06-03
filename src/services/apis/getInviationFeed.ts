@@ -1,14 +1,7 @@
+import { API_PATH_FEED } from "@/config/constant";
 import axiosInstance from "@/libs/axios";
-
-export interface FeedType {
-  id: string;
-  title: string;
-  coach: string[];
-  startTime: string;
-  endTime: string;
-  location: string;
-}
+import { FeedType } from "@/types/feed";
 
 export const getInviationFeed = () => {
-  return axiosInstance.get<{ feed: FeedType[] }>("/bca39459-6101-49c5-9664-7114d878533d").then((res) => res.data.feed);
+  return axiosInstance.get<{ feed: FeedType[] }>(API_PATH_FEED).then((res) => res.data.feed);
 };
