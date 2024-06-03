@@ -10,10 +10,11 @@ import { formatDateStartEnd } from "@/utils/format";
 import { IconButtonCircle } from "./Button";
 
 export interface IFeedProps extends CardProps {
-  feed: FeedType;
-  buttonPosition?: "top" | "bottom";
+  feed: FeedType; // The feed data to be displayed
+  buttonPosition?: "top" | "bottom"; // Optional position for the button
 }
 
+// Function to get a random color from the colours array
 const colours = [blue[800], green[500], orange[500], purple[800], red[800]];
 const getColour = () => colours[Math.floor(Math.random() * colours.length)];
 
@@ -59,6 +60,8 @@ const Feed: FC<IFeedProps> = ({ feed, sx, buttonPosition = "top", ...props }) =>
           {feed.location}
         </Stack>
       </Stack>
+
+      {/* Forward Button */}
       <IconButtonCircle
         color="primary"
         variant="contained"

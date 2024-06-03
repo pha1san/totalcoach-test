@@ -1,3 +1,4 @@
+// Object defining the paths used in the application
 export const PATH_PAGE = {
   favorites: "/favorites",
   lessons: "/lessons",
@@ -9,6 +10,7 @@ export const PATH_PAGE = {
   account: "/account",
 };
 
+// Array of navigation links used in the Navbar
 export const NAV_LINK = [
   { title: "Home", link: "/" },
   { title: "Lessons", link: PATH_PAGE.lessons },

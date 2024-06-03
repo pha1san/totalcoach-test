@@ -13,6 +13,8 @@ const Header = () => {
       <Toolbar>
         <img src={Logo} alt="Your SVG" style={{ height: 24 }} />
         <Typography sx={{ fontSize: 10, ml: 1 }}>ATHLETE</Typography>
+
+        {/* Navigation links */}
         <Box sx={{ display: "flex", mx: "auto", gap: 3 }}>
           {NAV_LINK.map((link, index) => (
             <Link to={link.link} key={index} style={{ textDecoration: "none", color: "black" }}>
@@ -20,10 +22,14 @@ const Header = () => {
             </Link>
           ))}
         </Box>
+
+        {/* Book Lesson button */}
         <Button variant="contained" sx={{ height: "48px", fontSize: 12, borderRadius: 2, mr: 2.5 }}>
           <Add sx={{ mr: 1 }} />
           Book Lesson
         </Button>
+
+        {/* User avatar and name */}
         <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 1 }}>
           <Avatar sx={{ color: "black", fontSize: 14, fontWeight: 500 }}>PH</Avatar>
           <Box>

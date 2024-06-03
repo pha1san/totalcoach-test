@@ -5,7 +5,7 @@ import { Box, BoxProps, Typography } from "@mui/material";
 import golfMap from "@/assets/maps-image/golf-course.png";
 import { IconButtonCircle } from "@/components/Button";
 
-const lessonButton = ["Putting", "Back", "Performance", "Left swing", "Putting", "Putting"];
+const lessonButton = ["Putting", "Back", "Performance", "Left swing", "Putting", "Putting"]; // List of button at the bottom of map
 
 const LessonMap: FC<BoxProps> = ({ ...props }) => {
   return (
@@ -24,7 +24,9 @@ const LessonMap: FC<BoxProps> = ({ ...props }) => {
         }}
       >
         <Typography>Tap on the area of the lesson map to see what lessons have been taught in that area</Typography>
+
         <img src={golfMap} alt="golf course map" style={{ width: "90%" }} />
+
         <Box sx={{ display: "flex", gap: 3, justifyContent: "space-around", width: "100%", px: 6 }}>
           {lessonButton.map((lesson, index) => (
             <Box

@@ -40,6 +40,7 @@ const theme = createTheme({
   },
 });
 
+//Define style for scrollbar
 const globalStyles = (
   <GlobalStyles
     styles={{
@@ -69,7 +70,7 @@ const globalStyles = (
 const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   return (
     <Provider theme={theme}>
-      <CssBaseline />
+      <CssBaseline /> {/* The reset CSS and  create a baseline for browsers*/}
       {globalStyles}
       {children}
     </Provider>
