@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction, FC } from "react";
 
-import { Box, List, ListItem, ListItemButton, ListItemText, BoxProps, Avatar, Typography } from "@mui/material";
+import { Box, List, ListItem, ListItemButton, ListItemText, BoxProps } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 import { NAV_LINK } from "@/config/path";
