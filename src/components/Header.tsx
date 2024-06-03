@@ -1,9 +1,10 @@
-import { Box, AppBar, Toolbar, IconButton, Typography, Avatar, Grid } from "@mui/material";
-import Logo from "@/assets/logo.svg";
+import { Add, ExpandMore } from "@mui/icons-material";
+import { Box, AppBar, Toolbar, Typography, Avatar } from "@mui/material";
 import { Link } from "react-router-dom";
+
+import Logo from "@/assets/logo.svg";
 import { NAV_LINK } from "@/config/path";
 
-import { Add, ExpandMore } from "@mui/icons-material";
 import Button from "./Button";
 
 const Header = () => {

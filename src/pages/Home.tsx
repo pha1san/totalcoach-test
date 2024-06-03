@@ -1,8 +1,9 @@
+import { Box, Skeleton, Stack, Typography } from "@mui/material";
+
 import Carosel from "@/components/Carosel";
 import Feed from "@/components/Feed";
 import useAsync from "@/hooks/useAsync";
 import { getInviationFeed } from "@/services/apis/getInviationFeed";
-import { Box, Card, Skeleton, Stack, Typography } from "@mui/material";
 
 const inviationFeedPerPage = 3;
 
@@ -17,7 +18,7 @@ const Dashboard = () => {
         <Typography variant="h1" sx={{ fontSize: 28, fontWeight: 700 }}>
           Hello Phaisan,
         </Typography>
-        <Typography sx={{ color: "text.secondary" }}>Here's what we have for you today.</Typography>
+        <Typography sx={{ color: "text.secondary" }}>Here&apos;s what we have for you today.</Typography>
       </Box>
       <Box>
         <Typography variant="h2" sx={{ fontSize: 20, fontWeight: 600 }}>

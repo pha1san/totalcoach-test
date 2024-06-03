@@ -1,7 +1,7 @@
-import { useCallback, useEffect, useState } from "react";
+import { DependencyList, useCallback, useEffect, useState } from "react";
 
-const useAsync = <T>(callback: () => Promise<T>, dependencies = []) => {
-  const [loading, setLoading] = useState(true);
+const useAsync = <T>(callback: () => Promise<T>, dependencies: DependencyList = []) => {
+  const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<unknown>();
   const [value, setValue] = useState<T>();
 

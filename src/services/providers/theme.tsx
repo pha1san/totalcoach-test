@@ -1,5 +1,4 @@
 import { createTheme, ThemeProvider as Provider } from "@mui/material/styles";
-import { grey } from "@mui/material/colors";
 
 // A custom theme for this app
 const theme = createTheme({

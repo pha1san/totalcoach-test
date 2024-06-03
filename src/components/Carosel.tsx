@@ -1,7 +1,9 @@
 import { FC, ReactElement, useState } from "react";
-import { Box, BoxProps, Slide, Stack } from "@mui/material";
-import { IconButtonCircle } from "./Button";
+
 import { ArrowForward, ArrowBack } from "@mui/icons-material";
+import { Box, BoxProps, Slide, Stack } from "@mui/material";
+
+import { IconButtonCircle } from "./Button";
 
 export interface ICaroselProps extends BoxProps {
   itemList: ReactElement[];
@@ -11,8 +13,6 @@ export interface ICaroselProps extends BoxProps {
 const Carosel: FC<ICaroselProps> = ({ itemList, itemsPerPage = 3, sx, ...props }) => {
   const [currentPage, setCurrentPage] = useState(0);
   const [slideDirection, setSlideDirection] = useState<"right" | "left" | undefined>("left");
-
-  const cardsPerPage = 3;
 
   const handleNextPage = () => {
     setSlideDirection("left");
@@ -64,18 +64,18 @@ const Carosel: FC<ICaroselProps> = ({ itemList, itemsPerPage = 3, sx, ...props }
                 justifyContent="flex-start"
                 sx={{ width: "100%", height: "100%" }}
               >
-                {itemList.slice(index * cardsPerPage, index * cardsPerPage + cardsPerPage)}
+                {itemList.slice(index * itemsPerPage, index * itemsPerPage + itemsPerPage)}
               </Stack>
             </Slide>
           </Box>
         ))}
       </Box>
-      {currentPage < Math.ceil((itemList.length || 0) / cardsPerPage) - 1 && (
+      {currentPage < Math.ceil((itemList.length || 0) / itemsPerPage) - 1 && (
         <IconButtonCircle
           color="secondary"
           variant="contained"
           onClick={handleNextPage}
-          disabled={currentPage >= Math.ceil((itemList.length || 0) / cardsPerPage) - 1}
+          disabled={currentPage >= Math.ceil((itemList.length || 0) / itemsPerPage) - 1}
         >
           <ArrowForward />
         </IconButtonCircle>

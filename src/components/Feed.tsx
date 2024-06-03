@@ -1,8 +1,10 @@
 import { FC } from "react";
-import { FeedType } from "@/services/apis/getInviationFeed";
+
+import { Place, WatchLater } from "@mui/icons-material";
 import { Box, Card, CardProps, Chip, Divider, Stack, Typography } from "@mui/material";
 import { blue, green, orange, purple, red } from "@mui/material/colors";
-import { Place, WatchLater } from "@mui/icons-material";
+
+import { FeedType } from "@/services/apis/getInviationFeed";
 import { formatDateStartEnd } from "@/utils/format";
 
 export interface IFeedProps extends CardProps {

@@ -1,8 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { PATH_PAGE } from "@/config/path";
-import Dashboard from "@/pages/Home";
 import Navbar from "@/layouts/Navbar";
+import Dashboard from "@/pages/Home";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
       },
       {
         path: PATH_PAGE.coachExercises,
-        element: <div>Coach's Exercises</div>,
+        element: <div>Coach&apos;s Exercises</div>,
       },
       {
         path: PATH_PAGE.event,
