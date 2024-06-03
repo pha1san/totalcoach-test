@@ -3,7 +3,7 @@ import { FC } from "react";
 import { Box, Avatar, Typography, BoxProps } from "@mui/material";
 
 interface IAvatarUserProps extends BoxProps {
-  showTitle?: boolean;
+  showTitle?: boolean; // Condition for show user name
 }
 
 const AvatarUser: FC<IAvatarUserProps> = ({ showTitle = true, sx, ...props }) => {

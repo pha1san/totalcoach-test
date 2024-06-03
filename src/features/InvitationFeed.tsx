@@ -11,9 +11,10 @@ const inviationFeedPerPageMobile = 2;
 
 const InvitationFeed = () => {
   const { loading, value: inviationFeedList } = useAsync(getInviationFeed); // Using the useAsync hook to fetch the invitation feed data
+
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.up("lg"));
-  const matchesMobile = useMediaQuery(theme.breakpoints.up("sm"));
+  const matches = useMediaQuery(theme.breakpoints.up("lg")); // When screen is more than 1200px
+  const matchesMobile = useMediaQuery(theme.breakpoints.up("sm")); // When screen is less than 600px
 
   const inviationFeedPerPage = matches ? inviationFeedPerPageDestktop : matchesMobile ? inviationFeedPerPageMobile : 1;
 
