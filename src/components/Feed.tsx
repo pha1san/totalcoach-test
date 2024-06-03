@@ -27,10 +27,7 @@ const Feed: FC<IFeedProps> = ({ feed, sx, ...props }) => {
           sx={{ borderWidth: "2px", borderColor: getColour(), borderRadius: 2, my: 0, mr: 0.5 }}
         />
         <Box>
-          <Typography variant="h3" sx={{ fontSize: 18, fontWeight: 600 }}>
-            {" "}
-            {feed.title}
-          </Typography>
+          <Typography variant="h3"> {feed.title}</Typography>
           <Box sx={{ display: "flex", flexDirection: "row", gap: 1, mt: 1 }}>
             {feed.coach.map((coach, index) => (
               <Chip key={index} label={coach} color="primary" sx={{ borderRadius: 1, fontSize: 12, height: "auto" }} />
