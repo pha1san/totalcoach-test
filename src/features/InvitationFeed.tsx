@@ -23,9 +23,9 @@ const InvitationFeed = () => {
           sx={{ mt: 4 }}
         />
       ) : (
-        <Stack spacing={4} direction="row" alignContent="center" justifyContent="flex-start">
+        <Stack spacing={4} direction="row" alignContent="center" justifyContent="flex-start" sx={{ mt: 4 }}>
           {Array.from({ length: inviationFeedPerPage }, (_, i) => (
-            <Skeleton key={i} width={420} height={200} sx={{ m: 0 }} />
+            <Skeleton key={i} variant="rectangular" width={420} height={200} sx={{ borderRadius: 4 }} />
           ))}
         </Stack>
       )}
