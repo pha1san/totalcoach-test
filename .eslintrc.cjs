@@ -1,3 +1,5 @@
+const fs = require("fs");
+
 module.exports = {
   root: true,
   env: { browser: true, es2020: true },
@@ -63,6 +65,9 @@ module.exports = {
   settings: {
     react: {
       version: "detect",
+    },
+    "import/resolver": {
+      typescript: {},
     },
   },
   parserOptions: {
