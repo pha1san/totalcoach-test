@@ -1,10 +1,11 @@
 import { Box, Typography } from "@mui/material";
 
+import ActivityFeed from "@/features/ActivityFeed";
 import InvitationFeed from "@/features/InvitationFeed";
 
 const Dashboard = () => {
   return (
-    <>
+    <Box sx={{ mb: 5 }}>
       <Box sx={{ my: 6 }}>
         <Typography variant="h1">Hello Phaisan,</Typography>
         <Typography sx={{ color: "text.secondary" }}>Here&apos;s what we have for you today.</Typography>
@@ -13,12 +14,9 @@ const Dashboard = () => {
         <InvitationFeed />
       </Box>
       <Box sx={{ display: "flex", width: "100%", height: "100%", gap: 2, mt: 8 }}>
-        <Box sx={{ width: 1 / 2 }}>d</Box>
-        <Box sx={{ width: 1 / 2 }}>
-          <Typography variant="h2">Activity Feed</Typography>
-        </Box>
+        <ActivityFeed sx={{ width: 1 / 2 }} />
       </Box>
-    </>
+    </Box>
   );
 };
 

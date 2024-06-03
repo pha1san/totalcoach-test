@@ -4,7 +4,7 @@ import { Place, WatchLater } from "@mui/icons-material";
 import { Box, Card, CardProps, Chip, Divider, Stack, Typography } from "@mui/material";
 import { blue, green, orange, purple, red } from "@mui/material/colors";
 
-import { FeedType } from "@/services/apis/getInviationFeed";
+import { FeedType } from "@/types/feed";
 import { formatDateStartEnd } from "@/utils/format";
 
 export interface IFeedProps extends CardProps {
@@ -15,10 +15,11 @@ const colours = [blue[800], green[500], orange[500], purple[800], red[800]];
 const getColour = () => colours[Math.floor(Math.random() * colours.length)];
 
 const Feed: FC<IFeedProps> = ({ feed, sx, ...props }) => {
-  console.log(new Date());
-
   return (
-    <Card {...props} sx={{ ...{ display: "flex", flexDirection: "column", p: 3, borderRadius: 3.5 }, ...sx }}>
+    <Card
+      {...props}
+      sx={{ ...{ display: "flex", flexDirection: "column", p: 3, borderRadius: 3.5, background: "white" }, ...sx }}
+    >
       <Box sx={{ display: "flex", mb: "auto" }}>
         <Divider
           orientation="vertical"

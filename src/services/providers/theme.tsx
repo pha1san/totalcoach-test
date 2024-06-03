@@ -44,16 +44,20 @@ const globalStyles = (
   <GlobalStyles
     styles={{
       "*::-webkit-scrollbar": {
-        width: "4px",
-        height: "4px",
+        width: "6px",
+        height: "6px",
       },
       "*::-webkit-scrollbar-track": {
         background: "transparent",
+        marginTop: "8px",
+        marginBottom: "8px",
       },
       "*::-webkit-scrollbar-thumb": {
         backgroundColor: "#888",
         borderRadius: "10px",
-        border: "3px solid transparent",
+        border: "1px solid transparent",
+        marginTop: "8px",
+        marginBottom: "8px",
       },
       "*::-webkit-scrollbar-thumb:hover": {
         background: "#555",
