@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <>
       <Header />
-      <Container>
+      <Container maxWidth="xl">
         <Outlet />
       </Container>
     </>
