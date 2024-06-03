@@ -18,7 +18,7 @@ const ActivityFeed: FC<BoxProps> = ({ ...props }) => {
         <Box sx={{ height: 600, overflowY: "auto", p: 3, pr: 2 }}>
           <Stack spacing={2} alignContent="center" justifyContent="center">
             {!loading && typeof activityFeedList !== "undefined"
-              ? activityFeedList.map((feed) => <Feed key={feed.id} feed={feed} />)
+              ? activityFeedList.map((feed) => <Feed key={feed.id} feed={feed} buttonPosition="bottom" />)
               : Array.from({ length: 4 }, (_, i) => (
                   <Skeleton key={i} variant="rectangular" width="100%" height={180} sx={{ borderRadius: 4 }} />
                 ))}

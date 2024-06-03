@@ -6,7 +6,7 @@ const Button = styled(MuiButton)<ButtonProps>(() => ({
 }));
 
 export const IconButtonCircle = styled(Button)<ButtonProps>(() => ({
-  borderRadius: 100,
+  borderRadius: "100%",
   padding: 8,
   minWidth: 0,
   height: "100%",

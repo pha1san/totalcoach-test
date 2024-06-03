@@ -1,24 +1,36 @@
 import { FC } from "react";
 
-import { Place, WatchLater } from "@mui/icons-material";
+import { ArrowForward, Place, WatchLater } from "@mui/icons-material";
 import { Box, Card, CardProps, Chip, Divider, Stack, Typography } from "@mui/material";
 import { blue, green, orange, purple, red } from "@mui/material/colors";
 
 import { FeedType } from "@/types/feed";
 import { formatDateStartEnd } from "@/utils/format";
+import { IconButtonCircle } from "./Button";
 
 export interface IFeedProps extends CardProps {
   feed: FeedType;
+  buttonPosition?: "top" | "bottom";
 }
 
 const colours = [blue[800], green[500], orange[500], purple[800], red[800]];
 const getColour = () => colours[Math.floor(Math.random() * colours.length)];
 
-const Feed: FC<IFeedProps> = ({ feed, sx, ...props }) => {
+const Feed: FC<IFeedProps> = ({ feed, sx, buttonPosition = "top", ...props }) => {
   return (
     <Card
       {...props}
-      sx={{ ...{ display: "flex", flexDirection: "column", p: 3, borderRadius: 3.5, background: "white" }, ...sx }}
+      sx={{
+        ...{
+          position: "relative",
+          display: "flex",
+          flexDirection: "column",
+          p: 3,
+          borderRadius: 3.5,
+          background: "white",
+        },
+        ...sx,
+      }}
     >
       <Box sx={{ display: "flex", mb: "auto" }}>
         <Divider
@@ -46,6 +58,13 @@ const Feed: FC<IFeedProps> = ({ feed, sx, ...props }) => {
           {feed.location}
         </Stack>
       </Stack>
+      <IconButtonCircle
+        color="primary"
+        variant="contained"
+        sx={{ position: "absolute", height: 40, right: 24, bottom: buttonPosition === "top" ? "none" : 24 }}
+      >
+        <ArrowForward />
+      </IconButtonCircle>
     </Card>
   );
 };
