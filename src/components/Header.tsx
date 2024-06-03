@@ -68,7 +68,7 @@ const Header = () => {
         {/* User avatar and name */}
         {
           // Hidden user avatar text when screen size is mobile
-          matchesMobile && <AvatarUser showTitle={matches} />
+          matchesMobile && <AvatarUser showTitle={matches} sx={{ justifyContent: "space-between" }} />
         }
       </Toolbar>
       <Drawer open={open} onClose={() => setOpen(false)}>

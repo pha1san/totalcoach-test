@@ -19,7 +19,7 @@ const MobileMemu: FC<IFeedProps> = ({ setOpen }) => {
 
   return (
     <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
-      <AvatarUser sx={{ alignItems: "center", p: 2 }} />
+      <AvatarUser sx={{ alignItems: "center", p: 2 }} showExpandMore={false} />
 
       <List>
         {NAV_LINK.map((link) => (
