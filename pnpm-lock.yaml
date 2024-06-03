@@ -20,6 +20,9 @@ dependencies:
   axios:
     specifier: ^1.7.2
     version: 1.7.2
+  css-mediaquery:
+    specifier: ^0.1.2
+    version: 0.1.2
   dayjs:
     specifier: ^1.11.11
     version: 1.11.11
@@ -43,6 +46,9 @@ devDependencies:
   '@testing-library/user-event':
     specifier: ^14.5.2
     version: 14.5.2(@testing-library/dom@10.1.0)
+  '@types/css-mediaquery':
+    specifier: ^0.1.4
+    version: 0.1.4
   '@types/react':
     specifier: ^18.2.66
     version: 18.3.3
@@ -1230,6 +1236,10 @@ packages:
       '@babel/types': 7.24.6
     dev: true
 
+  /@types/css-mediaquery@0.1.4:
+    resolution: {integrity: sha512-DZyHAz716ZUctpqkUU2COwUoZ4gI6mZK2Q1oIz/fvNS6XHVpKSJgDnE7vRxZUBn9vjJHDVelCVW0dkshKOLFsA==}
+    dev: true
+
   /@types/estree@1.0.5:
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
     dev: true
@@ -1821,6 +1831,10 @@ packages:
       shebang-command: 2.0.0
       which: 2.0.2
     dev: true
+
+  /css-mediaquery@0.1.2:
+    resolution: {integrity: sha512-COtn4EROW5dBGlE/4PiKnh6rZpAPxDeFLaEEwt4i10jpDMFt2EhQGS79QmmrO+iKCHv0PU/HrOWEhijFd1x99Q==}
+    dev: false
 
   /css.escape@1.5.1:
     resolution: {integrity: sha512-YUifsXXuknHlUsmlgyY0PKzgPOr7/FjCePfHNt0jxm83wHZi44VDMQ7/fGNkjY3/jV1MC+1CmZbaHzugyeRtpg==}
