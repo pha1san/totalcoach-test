@@ -24,10 +24,10 @@ const Header = () => {
           Book Lesson
         </Button>
         <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 1 }}>
-          <Avatar sx={{ bgcolor: "#A4A4A4", color: "black", fontSize: 14, fontWeight: 500 }}>PH</Avatar>
+          <Avatar sx={{ color: "black", fontSize: 14, fontWeight: 500 }}>PH</Avatar>
           <Box>
             <Typography sx={{ fontSize: 16, fontWeight: "bold" }}>Phaisan</Typography>
-            <Typography sx={{ fontSize: 12, color: "GrayText" }}>phai</Typography>
+            <Typography sx={{ fontSize: 12, color: "text.secondary" }}>phai</Typography>
           </Box>
           <ExpandMore />
         </Box>
