@@ -1,4 +1,4 @@
-import { API_PATH_FEED } from "@/config/constant";
+import { API_PATH_INVIATION } from "@/config/constant";
 import axiosInstance from "@/libs/axios";
 import { FeedType } from "@/types/feed";
 
@@ -7,5 +7,5 @@ import { FeedType } from "@/types/feed";
  * @returns {Promise<FeedType[]>} - List of inviation feed.
  */
 export const getInviationFeed = () => {
-  return axiosInstance.get<{ feed: FeedType[] }>(API_PATH_FEED).then((res) => res.data.feed);
+  return axiosInstance.get<{ feed: FeedType[] }>(API_PATH_INVIATION).then((res) => res.data.feed);
 };
