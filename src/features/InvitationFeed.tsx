@@ -1,4 +1,4 @@
-import { Box, Typography, Stack, Skeleton } from "@mui/material";
+import { Box, Typography, Stack, Skeleton, useMediaQuery, useTheme } from "@mui/material";
 
 import Carosel from "@/components/Carosel";
 import Feed from "@/components/Feed";
@@ -6,10 +6,18 @@ import useAsync from "@/hooks/useAsync";
 import { getInviationFeed } from "@/services/apis/getInviationFeed";
 
 // Number of invitations to display per page in the carousel
-const inviationFeedPerPage = 3;
+const inviationFeedPerPageDestktop = 3;
+const inviationFeedPerPageMobile = 2;
 
 const InvitationFeed = () => {
   const { loading, value: inviationFeedList } = useAsync(getInviationFeed); // Using the useAsync hook to fetch the invitation feed data
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up("lg"));
+  const matchesMobile = useMediaQuery(theme.breakpoints.up("sm"));
+
+  const inviationFeedPerPage = matches ? inviationFeedPerPageDestktop : matchesMobile ? inviationFeedPerPageMobile : 1;
+
+  console.log(inviationFeedPerPage);
 
   return (
     <Box>
@@ -19,7 +27,7 @@ const InvitationFeed = () => {
         // Display the carousel with feed items if data is available
         <Carosel
           itemList={inviationFeedList.map((feed) => (
-            <Feed key={feed.id} feed={feed} sx={{ maxWidth: 1 / 3, height: 200 }} />
+            <Feed key={feed.id} feed={feed} sx={{ maxWidth: 1 / inviationFeedPerPage, height: 220 }} />
           ))}
           itemsPerPage={inviationFeedPerPage}
           sx={{ mt: 4 }}

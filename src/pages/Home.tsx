@@ -20,9 +20,18 @@ const Dashboard = () => {
       </Box>
 
       {/* Component for arranging the LessonMap and ActivityFeed side by side */}
-      <Box sx={{ display: "flex", width: "100%", height: "100%", gap: 2, mt: 8 }}>
-        <LessonMap sx={{ width: 1 / 2 }} />
-        <ActivityFeed sx={{ width: 1 / 2 }} />
+      <Box
+        sx={{
+          display: "flex",
+          width: "100%",
+          height: "100%",
+          gap: 2,
+          mt: 8,
+          flexDirection: { xs: "column", lg: "row" },
+        }}
+      >
+        <LessonMap sx={{ width: { xs: 1, lg: 1 / 2 } }} />
+        <ActivityFeed sx={{ width: { xs: 1, lg: 1 / 2 } }} />
       </Box>
     </Box>
   );

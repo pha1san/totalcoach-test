@@ -27,7 +27,7 @@ const LessonMap: FC<BoxProps> = ({ ...props }) => {
 
         <img src={golfMap} alt="golf course map" style={{ width: "90%" }} />
 
-        <Box sx={{ display: "flex", gap: 3, justifyContent: "space-around", width: "100%", px: 6 }}>
+        <Box sx={{ display: "flex", gap: 3, justifyContent: "space-around", width: "100%", px: 6, flexWrap: "wrap" }}>
           {lessonButton.map((lesson, index) => (
             <Box
               key={`lesson-${index}`}
