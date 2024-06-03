@@ -1,3 +1,4 @@
+import { CssBaseline, GlobalStyles } from "@mui/material";
 import { createTheme, ThemeProvider as Provider } from "@mui/material/styles";
 
 // A custom theme for this app
@@ -24,11 +25,51 @@ const theme = createTheme({
         },
       },
     },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#D7D7D7",
+        },
+      },
+    },
+    MuiSkeleton: {
+      defaultProps: {
+        animation: "wave",
+      },
+    },
   },
 });
 
+const globalStyles = (
+  <GlobalStyles
+    styles={{
+      "*::-webkit-scrollbar": {
+        width: "4px",
+        height: "4px",
+      },
+      "*::-webkit-scrollbar-track": {
+        background: "transparent",
+      },
+      "*::-webkit-scrollbar-thumb": {
+        backgroundColor: "#888",
+        borderRadius: "10px",
+        border: "3px solid transparent",
+      },
+      "*::-webkit-scrollbar-thumb:hover": {
+        background: "#555",
+      },
+    }}
+  />
+);
+
 const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  return <Provider theme={theme}>{children}</Provider>;
+  return (
+    <Provider theme={theme}>
+      <CssBaseline />
+      {globalStyles}
+      {children}
+    </Provider>
+  );
 };
 
 export default ThemeProvider;
