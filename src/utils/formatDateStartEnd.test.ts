@@ -1,4 +1,3 @@
-import dayjs from "dayjs";
 import { describe, it, expect } from "vitest";
 
 import { formatDateStartEnd } from "./format";
